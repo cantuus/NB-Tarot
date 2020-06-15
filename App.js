@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>PADORU PADORU!</Text>
+      <Text style={styles.text}>PADORU PADORU!!!!</Text>
       <Image source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }} style={styles.img} />
     </View>
   );
