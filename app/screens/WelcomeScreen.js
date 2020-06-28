@@ -1,26 +1,28 @@
-import React, { useState } from 'react'
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View, ImageBackground, Image, Button } from 'react-native'
 
-export default class WelcomeScreen extends React.Component {
-    render() {
-        return (
-            <ImageBackground
-                style={styles.background}
-                source={require('../assets/background.jpg')}>
+export default function WelcomeScreen({ navigation }) {
 
-                <View style={styles.logoContainer}>
-                    <Image style={styles.logo} source={require("../assets/lemon-logo.png")} />
-                    <Text>Whispers of the Universe</Text>
-                </View>
+    return (
+        <ImageBackground
+            style={styles.background}
+            source={require('../assets/background.jpg')}>
 
-                <Button title="One Card" style={styles.loginButton} onPress={() => this.props.navigation.navigate('ViewImageScreen')} />
-                <Button title="Two Card" style={styles.loginButton} onPress={() => history.push("/twocard")} />
-                <Button title="Affirmations" style={styles.registerButton} onPress={() => history.push("/affirmations")} />
+            <View style={styles.logoContainer}>
+                <Image style={styles.logo} source={require("../assets/lemon-logo.png")} />
+                <Text>Whispers of the Universe</Text>
+            </View>
 
-            </ImageBackground>
+            <Button title="One Card" style={styles.loginButton} onPress={() => navigation.navigate('Tarot')} />
+            <Button title="Two Card" style={styles.loginButton} onPress={() => navigation.navigate('Tarot')} />
+            <Button title="Affirmations" style={styles.registerButton} onPress={() => navigation.navigate('Tarot')} />
 
-        );
-    }
+        </ImageBackground>
+
+    );
+
 }
 
 const styles = StyleSheet.create({

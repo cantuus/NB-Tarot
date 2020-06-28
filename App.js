@@ -1,4 +1,5 @@
-import React from 'react';
+import 'react-native-gesture-handler'
+import * as React from 'react';
 import {
   View,
   Text,
@@ -14,15 +15,23 @@ import {
   StatusBar,
   Dimensions
 } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
 const App = () => {
 
-  return (
-    <WelcomeScreen />
-  )
+  const Stack = createStackNavigator();
 
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={WelcomeScreen} />
+        <Stack.Screen name="Tarot" component={ViewImageScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 };
 
 

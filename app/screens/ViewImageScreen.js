@@ -1,9 +1,9 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import * as React from 'react';
+import { StyleSheet, Text, View, Image, Button } from 'react-native'
 
 import colors from '../config/colors'
 
-export default function ViewImageScreen() {
+export default function ViewImageScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.closeIcon}></View>
@@ -12,6 +12,7 @@ export default function ViewImageScreen() {
                 resizeMode="contain"
                 style={styles.image}
                 source={require('../assets/chair.jpg')} />
+            <Button title="Go back" onPress={() => navigation.goBack()} />
         </View>
     )
 }
