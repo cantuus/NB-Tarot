@@ -14,14 +14,13 @@ import {
   StatusBar,
   Dimensions
 } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
 const App = () => {
 
   return (
-    <ViewImageScreen />
+    <WelcomeScreen />
   )
 
 };
