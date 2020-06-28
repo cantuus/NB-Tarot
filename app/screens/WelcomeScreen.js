@@ -18,25 +18,30 @@ export default function WelcomeScreen({ navigation }) {
                 <Image style={styles.logo} source={require("../assets/lemon-logo.png")} />
             </View>
             <View style={styles.buttonContainer}>
-
-                <Button
-                    buttonStyle={styles.menuButton}
-                    title="One Card"
-                    onPress={() => navigation.navigate('Tarot')}
-                    raised={true}
-                />
-                <Button
-                    buttonStyle={styles.menuButton}
-                    title="Two Card"
-                    onPress={() => navigation.navigate('Tarot')}
-                    raised={true}
-                />
-                <Button
-                    buttonStyle={styles.menuButton}
-                    title="Affirmations"
-                    onPress={() => navigation.navigate('Affirmations')}
-                    raised={true}
-                />
+                <View style={styles.container}>
+                    <Button
+                        buttonStyle={styles.menuButton}
+                        title="One Card"
+                        onPress={() => navigation.navigate('Tarot')}
+                        raised={true}
+                    />
+                </View>
+                <View style={styles.container}>
+                    <Button
+                        buttonStyle={styles.menuButton}
+                        title="Two Card"
+                        onPress={() => navigation.navigate('Tarot')}
+                        raised={true}
+                    />
+                </View>
+                <View style={styles.container}>
+                    <Button
+                        buttonStyle={styles.menuButton}
+                        title="Affirmations"
+                        onPress={() => navigation.navigate('Affirmations')}
+                        raised={true}
+                    />
+                </View>
 
             </View>
 
@@ -54,7 +59,10 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         position: "absolute",
-        top: 250,
+        top: 230,
+    },
+    container: {
+        paddingBottom: 50
     },
     loginButton: {
         width: '100%',
