@@ -3,13 +3,10 @@ import { StyleSheet, Text, View, Image, Button } from 'react-native'
 
 import colors from '../config/colors'
 
-export default function ViewImageScreen({ navigation }) {
+export default function Tarot({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={styles.closeIcon}></View>
-            <View style={styles.deleteIcon}></View>
             <Image
-                resizeMode="contain"
                 style={styles.image}
                 source={require('../assets/chair.jpg')} />
             <Button title="Go back" onPress={() => navigation.goBack()} />

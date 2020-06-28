@@ -17,20 +17,31 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { ThemeProvider } from 'react-native-elements';
 import WelcomeScreen from './app/screens/WelcomeScreen';
-import ViewImageScreen from './app/screens/ViewImageScreen';
+import AffirmationsScreen from './app/screens/AffirmationsScreen';
+import TarotScreen from './app/screens/TarotScreen'
 
 const App = () => {
 
   const Stack = createStackNavigator();
 
+  const theme = {
+    colors: {
+      menubutton: "#FADa5E"
+    }
+  }
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={WelcomeScreen} />
-        <Stack.Screen name="Tarot" component={ViewImageScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ThemeProvider theme={theme}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={WelcomeScreen} />
+          <Stack.Screen name="Tarot" component={TarotScreen} />
+          <Stack.Screen name="Affirmations" component={AffirmationsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
   )
 };
 

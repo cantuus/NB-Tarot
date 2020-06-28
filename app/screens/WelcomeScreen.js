@@ -1,7 +1,11 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, ThemeProvider } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet, Text, View, ImageBackground, Image, Button } from 'react-native'
+import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native'
+import { Button, ThemeConsumer } from 'react-native-elements';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+import colors from '../config/colors'
 
 export default function WelcomeScreen({ navigation }) {
 
@@ -12,12 +16,29 @@ export default function WelcomeScreen({ navigation }) {
 
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require("../assets/lemon-logo.png")} />
-                <Text>Whispers of the Universe</Text>
             </View>
+            <View style={styles.buttonContainer}>
 
-            <Button title="One Card" style={styles.loginButton} onPress={() => navigation.navigate('Tarot')} />
-            <Button title="Two Card" style={styles.loginButton} onPress={() => navigation.navigate('Tarot')} />
-            <Button title="Affirmations" style={styles.registerButton} onPress={() => navigation.navigate('Tarot')} />
+                <Button
+                    buttonStyle={styles.menuButton}
+                    title="One Card"
+                    onPress={() => navigation.navigate('Tarot')}
+                    raised={true}
+                />
+                <Button
+                    buttonStyle={styles.menuButton}
+                    title="Two Card"
+                    onPress={() => navigation.navigate('Tarot')}
+                    raised={true}
+                />
+                <Button
+                    buttonStyle={styles.menuButton}
+                    title="Affirmations"
+                    onPress={() => navigation.navigate('Affirmations')}
+                    raised={true}
+                />
+
+            </View>
 
         </ImageBackground>
 
@@ -27,9 +48,13 @@ export default function WelcomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     background: {
-        flex: 1,
+        flex: 2,
         justifyContent: "flex-end",
         alignItems: "center",
+    },
+    buttonContainer: {
+        position: "absolute",
+        top: 250,
     },
     loginButton: {
         width: '100%',
@@ -51,5 +76,10 @@ const styles = StyleSheet.create({
         height: 70,
         backgroundColor: "#4ecdc4",
     },
+    menuButton: {
+        flex: 1,
+        backgroundColor: "#FADA5E",
+        color: colors.black
+    }
 
 })
