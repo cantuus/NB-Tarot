@@ -17,8 +17,8 @@ export default function WelcomeScreen({ navigation }) {
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require("../assets/lemon-logo.png")} />
             </View>
-            <View style={styles.buttonContainer}>
-                <View style={styles.container}>
+            <View style={styles.buttonsContainer}>
+                <View style={styles.buttonContainer}>
                     <Button
                         buttonStyle={styles.menuButton}
                         title="One Card"
@@ -26,7 +26,7 @@ export default function WelcomeScreen({ navigation }) {
                         raised={true}
                     />
                 </View>
-                <View style={styles.container}>
+                <View style={styles.buttonContainer}>
                     <Button
                         buttonStyle={styles.menuButton}
                         title="Two Card"
@@ -34,7 +34,7 @@ export default function WelcomeScreen({ navigation }) {
                         raised={true}
                     />
                 </View>
-                <View style={styles.container}>
+                <View style={styles.buttonContainer}>
                     <Button
                         buttonStyle={styles.menuButton}
                         title="Affirmations"
@@ -57,11 +57,11 @@ const styles = StyleSheet.create({
         justifyContent: "flex-end",
         alignItems: "center",
     },
-    buttonContainer: {
+    buttonsContainer: {
         position: "absolute",
         top: 230,
     },
-    container: {
+    buttonContainer: {
         paddingBottom: 50
     },
     loginButton: {
@@ -87,7 +87,10 @@ const styles = StyleSheet.create({
     menuButton: {
         flex: 1,
         backgroundColor: "#FADA5E",
-        color: colors.black
+        color: colors.black,
+        borderRadius: 15,
+        height: 70,
+        width: 200
     }
 
 })
