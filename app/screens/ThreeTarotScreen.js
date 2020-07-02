@@ -15,18 +15,29 @@ export default function Tarot({ navigation }) {
             style={styles.background}
             source={require('../assets/chair.jpg')} >
             <View style={styles.tarotContainer}>
-                <Image
-                    style={styles.tarotImage}
-                    source={tarotArray[Math.floor(Math.random() * tarotArray.length)]}
-                />
-                <Image
-                    style={styles.tarotImage}
-                    source={tarotArray[Math.floor(Math.random() * tarotArray.length)]}
-                />
-                <Image
-                    style={styles.tarotImage}
-                    source={tarotArray[Math.floor(Math.random() * tarotArray.length)]}
-                />
+                <View style={styles.upperTarotContainer}>
+                    <View style={styles.upperTarotCard}>
+                        <Image
+                            resizeMode={"cover"}
+                            style={styles.tarotImage}
+                            source={tarotArray[Math.floor(Math.random() * tarotArray.length)]}
+                        />
+                    </View>
+                    <View style={styles.upperTarotCard}>
+                        <Image
+                            resizeMode={"cover"}
+                            style={styles.tarotImage}
+                            source={tarotArray[Math.floor(Math.random() * tarotArray.length)]}
+                        />
+                    </View>
+                </View>
+                <View styles={styles.lowerTarotContainer}>
+                    <Image
+                        resizeMode={"cover"}
+                        style={styles.tarotImage}
+                        source={tarotArray[Math.floor(Math.random() * tarotArray.length)]}
+                    />
+                </View>
             </View>
         </ImageBackground>
 
@@ -36,14 +47,25 @@ export default function Tarot({ navigation }) {
 const styles = StyleSheet.create({
     background: {
         flex: 2,
-        justifyContent: "flex-end",
+        // justifyContent: "flex-end",
         alignItems: "center",
     },
     tarotContainer: {
-        flex: 2,
-        justifyContent: "flex-start",
+        paddingTop: 10,
+        justifyContent: "center",
         alignItems: "center",
-        paddingTop: 30
+    },
+    upperTarotContainer: {
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+    },
+    lowerTarotContainer: {
+        // paddingTop: 5
+    },
+    upperTarotCard: {
+        paddingRight: 5,
+        paddingBottom: 5
     },
     tarotImage: {
         width: 150,

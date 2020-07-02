@@ -16,6 +16,7 @@ export default function Tarot({ navigation }) {
             source={require('../assets/chair.jpg')} >
             <View style={styles.tarotContainer}>
                 <Image
+                    resizeMode={"cover"}
                     style={styles.tarotImage}
                     source={tarotArray[Math.floor(Math.random() * tarotArray.length)]}
                 />
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
         flex: 2,
         justifyContent: "flex-start",
         alignItems: "center",
-        paddingTop: 30
+        paddingTop: 50
     },
     tarotImage: {
         width: 150,
