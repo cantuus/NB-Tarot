@@ -20,7 +20,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { ThemeProvider } from 'react-native-elements';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import AffirmationsScreen from './app/screens/AffirmationsScreen';
-import TarotScreen from './app/screens/TarotScreen'
+import OneTarotScreen from './app/screens/OneTarotScreen'
+import ThreeTarotScreen from './app/screens/ThreeTarotScreen'
 
 const App = () => {
 
@@ -37,7 +38,8 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={WelcomeScreen} />
-          <Stack.Screen name="Tarot" component={TarotScreen} />
+          <Stack.Screen name="One Tarot Draw" component={OneTarotScreen} />
+          <Stack.Screen name="Three Tarot Draw" component={ThreeTarotScreen} />
           <Stack.Screen name="Affirmations" component={AffirmationsScreen} />
         </Stack.Navigator>
       </NavigationContainer>

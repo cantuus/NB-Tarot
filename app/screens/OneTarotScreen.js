@@ -8,6 +8,8 @@ import TarotStore from '../config/tarotStore';
 
 export default function Tarot({ navigation }) {
 
+    let tarotArray = TarotStore.tarots
+
     return (
         < ImageBackground
             style={styles.background}

@@ -22,15 +22,15 @@ export default function WelcomeScreen({ navigation }) {
                     <Button
                         buttonStyle={styles.menuButton}
                         title="One Card"
-                        onPress={() => navigation.navigate('Tarot')}
+                        onPress={() => navigation.navigate('One Tarot Draw')}
                         raised={true}
                     />
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button
                         buttonStyle={styles.menuButton}
-                        title="Two Card"
-                        onPress={() => navigation.navigate('Tarot')}
+                        title="Three Card"
+                        onPress={() => navigation.navigate('Three Tarot Draw')}
                         raised={true}
                     />
                 </View>

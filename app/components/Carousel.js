@@ -9,7 +9,7 @@ export default class TarotCarousel extends React.Component {
         return (
             <View>
                 <Image
-                    source={require(item.image)}
+                    source={item}
                 ></Image>
             </View>
         )
