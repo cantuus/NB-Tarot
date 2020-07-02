@@ -29,8 +29,9 @@
     "uuidv4": "^6.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
     "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
+    "babel-preset-react-native": "^2.1.0"
   },
   "private": true
 }

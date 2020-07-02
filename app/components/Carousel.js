@@ -1,24 +1,33 @@
 import Carousel from 'react-native-snap-carousel';
+import { StyleSheet, Text, View, Image } from 'react-native'
+import * as React from 'react';
+import TarotStore from '../config/tarotStore'
 
-export class MyCarousel extends Component {
+export default class TarotCarousel extends React.Component {
 
     _renderItem = ({ item, index }) => {
         return (
-            <View style={styles.slide}>
-                <Text style={styles.title}>{item.title}</Text>
+            <View>
+                <Image
+                    source={require(item.image)}
+                ></Image>
             </View>
-        );
+        )
     }
+
 
     render() {
         return (
             <Carousel
                 ref={(c) => { this._carousel = c; }}
-                data={this.state.entries}
+                data={TarotStore.tarots}
                 renderItem={this._renderItem}
-                sliderWidth={sliderWidth}
-                itemWidth={itemWidth}
+                sliderWidth={20}
+                itemWidth={20}
             />
         );
     }
 }
+
+
+

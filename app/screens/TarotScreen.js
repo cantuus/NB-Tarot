@@ -1,43 +1,42 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native'
+import firstTarot from '../assets/Tarot/tarot1.jpg'
+import { StyleSheet, Text, View, Image, ImageBackground, Button } from 'react-native'
+import TarotCarousel from '../components/Carousel'
 
 import colors from '../config/colors'
+import TarotStore from '../config/tarotStore';
 
 export default function Tarot({ navigation }) {
+
     return (
-        <View style={styles.container}>
-            <Image
-                style={styles.image}
-                source={require('../assets/chair.jpg')} />
-            <Button title="Go back" onPress={() => navigation.goBack()} />
-        </View>
+        < ImageBackground
+            style={styles.background}
+            source={require('../assets/chair.jpg')} >
+            <View style={styles.tarotContainer}>
+                <Image
+                    style={styles.tarotImage}
+                    source={tarotArray[Math.floor(Math.random() * tarotArray.length)]}
+                />
+            </View>
+        </ImageBackground>
+
     )
 }
 
 const styles = StyleSheet.create({
-    closeIcon: {
-        width: 50,
-        height: 50,
-        backgroundColor: colors.primary,
-        position: "absolute",
-        top: 40,
-        left: 30,
+    background: {
+        flex: 2,
+        justifyContent: "flex-end",
+        alignItems: "center",
     },
-    container: {
-        backgroundColor: colors.black,
-        flex: 1,
+    tarotContainer: {
+        flex: 2,
+        justifyContent: "flex-start",
+        alignItems: "center",
+        paddingTop: 30
     },
-    deleteIcon: {
-        width: 50,
-        height: 50,
-        backgroundColor: colors.secondary,
-        position: "absolute",
-        top: 40,
-        right: 30,
-    },
-    image: {
-        width: '100%',
-        height: '100%',
-
+    tarotImage: {
+        width: 150,
+        height: 290,
     }
 })
